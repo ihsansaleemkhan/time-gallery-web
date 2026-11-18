@@ -15,7 +15,11 @@ export default function FloatingButtons() {
           type="button"
           className="floating-chat-btn"
           aria-label={FLOATING_BUTTONS_DATA.chatButtonLabel}
-          onClick={() => {}}
+          onClick={() => {
+            if (window.Tawk_API && typeof window.Tawk_API.toggle === 'function') {
+              window.Tawk_API.toggle();
+            }
+          }}
         >
           <svg
             className="chat-bubble-icon"

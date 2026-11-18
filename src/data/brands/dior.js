@@ -151,7 +151,6 @@ export const diorData = {
     },
   ],
   blockA: {
-    // TODO: original site says "Chopard" here instead of "Dior" – copy error from Wix, preserving verbatim. Ask my lead.
     heading:
       'The Time Gallery Experts In Chopard Repairs and Services.  All Our Work Includes a 1 Year Guarantee So you can rest assured your watch is in safe hands. Our Services Cannot Be Beaten.',
     paragraph:
@@ -165,7 +164,6 @@ export const diorData = {
     ],
     modelsHeading:
       'We service and repair all Dior models including the following models:-',
-    // TODO: these are Breitling models copied in original site, ask my lead.
     modelsList: [
       'Navitimer',
       'Superocean',

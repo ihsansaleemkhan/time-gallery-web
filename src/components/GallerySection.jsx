@@ -105,7 +105,6 @@ function Lightbox({ cells, currentIndex, onClose, onPrev, onNext }) {
   const dialogRef = useRef(null);
   const closeRef = useRef(null);
 
-  // Lock body scroll and set focus
   useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
@@ -113,7 +112,6 @@ function Lightbox({ cells, currentIndex, onClose, onPrev, onNext }) {
     return () => { document.body.style.overflow = prev; };
   }, []);
 
-  // Keyboard support
   useEffect(() => {
     function handleKey(e) {
       if (e.key === 'Escape') onClose();
@@ -190,7 +188,6 @@ export default function GallerySection() {
 
   const closeLightbox = useCallback(() => {
     setLightboxIndex(-1);
-    // Return focus to the clicked photo
     triggerRef.current?.focus();
   }, []);
 

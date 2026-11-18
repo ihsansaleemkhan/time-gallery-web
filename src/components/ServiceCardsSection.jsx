@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import repairsGif from '../assets/images/service-repairs.gif';
 import ourServicesGif from '../assets/images/service-our-services.gif';
 import polishingGif from '../assets/images/service-polishing.gif';
@@ -15,19 +16,19 @@ const SERVICE_CARDS = [
   {
     id: 'our-services',
     title: 'Our Services »',
-    href: '/our-services',
+    href: '/watch-repairs-servicing',
     src: ourServicesGif,
   },
   {
     id: 'watch-polishing',
     title: 'Watch Polishing »',
-    href: '/watch-polishing',
+    href: '/watch-repairs-servicing',
     src: polishingGif,
   },
   {
     id: 'battery-replacement',
     title: 'Watch Battery Replacement »',
-    href: '/battery-replacement',
+    href: '/watch-repairs-servicing',
     src: batteryGif,
   },
 ];
@@ -39,7 +40,7 @@ export default function ServiceCardsSection() {
         <div className="service-cards-grid">
           {SERVICE_CARDS.map((card) => (
             <article key={card.id} className="service-card">
-              <a href={card.href} className="service-card-link">
+              <Link to={card.href} className="service-card-link">
                 <header className="service-card-header">
                   <h2 className="service-card-title">{card.title}</h2>
                 </header>
@@ -55,7 +56,7 @@ export default function ServiceCardsSection() {
                     loading="lazy"
                   />
                 </div>
-              </a>
+              </Link>
             </article>
           ))}
         </div>

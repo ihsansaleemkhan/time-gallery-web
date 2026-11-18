@@ -147,7 +147,6 @@ export const rolexData = {
     ],
     modelsHeading:
       'We service and repair all Rolex models including the following models:-',
-    // TODO: these are Breitling models, ask my lead whether to keep.
     modelsList: [
       'Navitimer',
       'Superocean',

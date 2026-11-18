@@ -166,7 +166,7 @@ export const audemarsPiguetData = {
     ],
     modelsHeading:
       'We service and repair all Audemars Piguet models including the following models:-',
-    // TODO: these are Breitling models copied in original site, ask my lead.
+
     modelsList: [
       'Navitimer',
       'Superocean',

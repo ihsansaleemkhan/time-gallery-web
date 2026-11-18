@@ -16,7 +16,7 @@ const RIGHT_SERVICE_IDS = [
   'crown-replacement',
 ];
 
-// Order for stacked mobile layout
+
 const MOBILE_ORDER_MAP = {
   'watch-repairs': 1,
   'watch-service': 2,

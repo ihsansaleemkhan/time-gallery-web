@@ -103,7 +103,6 @@ export const hublotData = {
       gapBottom: 23,
       photoTop: 37,
       titleLineHeight: 20,
-      // TODO: a UK price and a "2 year guarantee" that conflicts with the 1 year elsewhere; ask my lead.
       description:
         'We use only the finest Swiss batteries\nwhen replacing your battery.  This service\nincludes a reseal and pressure test to\nensure your watch is water proof. All this\nfor £44.95 + VAT and a 2 year guarantee.',
     },
@@ -160,7 +159,6 @@ export const hublotData = {
     ],
     modelsHeading:
       'We service and repair all Hublot models including the following models:-',
-    // TODO: these are Breitling models, ask my lead.
     modelsList: [
       'Navi timer',
       'Super ocean',
@@ -176,7 +174,6 @@ export const hublotData = {
       'Chrono liner',
       'Emergency',
     ],
-    // TODO: no space between Hublot and repairs in original; keep it and ask my lead.
     repairsHeading: 'Frequent Hublotrepairs that we undertake are:-',
     repairsBullets: [
       'Hublot Hand Replacement.',

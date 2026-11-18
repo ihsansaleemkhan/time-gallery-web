@@ -168,7 +168,6 @@ export const radoData = {
     ],
     modelsHeading:
       'We service and repair all Rado models including the following models:-',
-    // TODO: these are Breitling models, ask my lead.
     modelsList: [
       'Navitimer',
       'Superocean',

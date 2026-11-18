@@ -1,6 +1,6 @@
 import './AboutText.css';
 
-// Text content constants 
+
 const HEADING = 'About us';
 
 const PARA_1 =
@@ -30,7 +30,6 @@ export default function AboutText() {
 
         <p className="about-body about-body--large">{PARA_2}</p>
 
-        {/* TODO: Ask lead whether to correct "We are repair" → "We repair" */}
         <p className="about-body">{PARA_3}</p>
 
         <p className="about-body about-body--large">{PARA_4}</p>

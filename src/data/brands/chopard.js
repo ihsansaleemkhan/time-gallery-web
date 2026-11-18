@@ -154,7 +154,6 @@ export const chopardData = {
       'The Time Gallery Experts In Chopard Repairs and Services.  All Our Work Includes a 1 Year Guarantee So you can rest assured your watch is in safe hands. Our Services Cannot Be Beaten.',
     paragraph:
       'Whether your watch needs a complete repair, refurbishment or simply a replacement glass or crown. The Time Gallery has the experience and expertise needed to bring your watch back to its best.',
-    // TODO: no space between Chopard and Repair in original; keep it and ask my lead.
     whyHeading: 'Why Use The Time Gallery for your ChopardRepair?',
     whyBullets: [
       'Expert Qualified Watchmakers.',
@@ -164,7 +163,6 @@ export const chopardData = {
     ],
     modelsHeading:
       'We service and repair all Chopard models including the following models:-',
-    // TODO: these are Breitling models copied in original site, ask my lead.
     modelsList: [
       'Navitimer',
       'Superocean',
@@ -192,7 +190,6 @@ export const chopardData = {
     ],
   },
   blockB: {
-    // TODO: original site says "Audemars Piguet" instead of "Chopard" here – copy error from Wix, preserving verbatim.
     heading:
       'Please contact us regarding any repair query you may have regarding your Audemars Piguet watch repair.',
     paragraph:

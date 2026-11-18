@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import MediaPlaceholder from './MediaPlaceholder';
 import './HeroSection.css';
 
@@ -11,7 +12,7 @@ const HERO_CONTENT = {
   ],
   linkPrefix: 'click',
   linkSuffix: ' here for best offers',
-  linkHref: '/offers',
+  linkHref: '/contact',
 };
 
 export default function HeroSection() {
@@ -44,10 +45,10 @@ export default function HeroSection() {
             ))}
           </p>
           <div className="hero-link-wrapper">
-            <a href={HERO_CONTENT.linkHref} className="hero-action-link">
+            <Link to={HERO_CONTENT.linkHref} className="hero-action-link">
               <span className="hero-link-click">{HERO_CONTENT.linkPrefix}</span>
               <span className="hero-link-rest">{HERO_CONTENT.linkSuffix}</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

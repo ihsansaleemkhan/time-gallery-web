@@ -15,8 +15,6 @@ const services = [
     bullets: ['All Brands Can Be Repaired'],
   },
   {
-    // TODO: Ask lead – the Refurbishment block uses the exact same paragraph
-    // as Watch Repairs. Is this intentional or should it have its own copy?
     id: 'refurbishment',
     title: 'Refurbishment',
     icon: 'refurbishment',
@@ -30,8 +28,7 @@ const services = [
     paragraphs: [
       'Whether your watch has a mineral, sapphire or acrylic glass, we can replace it. We use official parts and replace your watch\u2019s seals to ensure your watch is water-resistant if applicable.',
     ],
-    // TODO: Ask lead – "Saphire" appears to be a typo for "Sapphire".
-    // Keeping as-is to match the original site.
+
     bullets: ['Saphire', 'Mineral', 'Acrylic', 'Replacement Seals Included'],
   },
   {
@@ -76,8 +73,7 @@ const services = [
     ],
   },
   {
-    // TODO: Ask lead – the title links to an external watchrepairuk.com domain.
-    // Is this correct, or should it link internally?
+
     id: 'strap-bracelet-replacement',
     title: 'Strap and Bracelet Replacement',
     titleLink: 'http://watchrepairuk.com/watch-services/strap-bracelet-replacement/',
@@ -86,8 +82,6 @@ const services = [
       'The watch straps and bracelets are available in various materials (e.g. leather, stainless steel, synthetic etc.)',
     ],
     includedLine: 'Included in our services are:',
-    // TODO: Ask lead – the bullet says "Official Crowns" under Strap and
-    // Bracelet Replacement. Should this be "Official Straps" instead?
     bullets: [
       'Official Crowns (Omega, Rolex, IWC etc)',
       'Replacement Seals Included.',

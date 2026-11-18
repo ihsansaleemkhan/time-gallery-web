@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import './CareerForm.css';
 
-// Text and option constants at the top
+const W3F_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+const W3F_ENDPOINT = 'https://api.web3forms.com/submit';
+
+
 const HOW_DID_YOU_FIND_US_OPTIONS = [
   { value: '', label: 'How did you find us ?', disabled: true },
   { value: 'Google search', label: 'Google search' },
@@ -10,12 +13,10 @@ const HOW_DID_YOU_FIND_US_OPTIONS = [
   { value: 'Walk-in', label: 'Walk-in' },
   { value: 'Other', label: 'Other' },
 ];
-// TODO: Ask lead for the real list of options for the 'How did you find us ?' dropdown.
 
 const AVAILABLE_DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const SUCCESS_MESSAGE = "Thanks for applying to volunteer with us! We'll get back to you soon.";
-// TODO: "volunteer" looks like a template leftover; confirm with lead.
 
 const INITIAL_FORM_STATE = {
   firstName: '',
@@ -76,24 +77,53 @@ export default function CareerForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validate()) {
-      return;
-    }
+    if (!validate()) return;
 
     setIsSubmitting(true);
 
-    // TODO: POST formData to lead's endpoint or email service
-    console.log('Career Application Submitted:', formData);
+    try {
+      const payload = {
+        access_key: W3F_KEY,
+        subject: 'New Career Application — The Time Gallery',
+        from_name: 'The Time Gallery Website',
+        'First Name': formData.firstName,
+        'Last Name': formData.lastName,
+        Email: formData.email,
+        Phone: formData.phone,
+        'How did you find us': formData.source || 'Not specified',
+        'Available Days': formData.days.join(', ') || 'Not specified',
+        'About the Applicant': formData.aboutYou || 'Not provided',
+      };
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+      const response = await fetch(W3F_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (!result.success) {
+        throw new Error(result.message || 'Submission failed. Please try again.');
+      }
+
       setSubmitSuccess(true);
       setFormData(INITIAL_FORM_STATE);
       setErrors({});
-    }, 400);
+    } catch (error) {
+      setErrors((prev) => ({
+        ...prev,
+        submit: error.message || 'Something went wrong. Please try again.',
+      }));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -272,6 +302,11 @@ export default function CareerForm() {
 
       {/* Submit Button */}
       <div className="career-button-container">
+        {errors.submit && (
+          <p className="career-inline-error" role="alert" style={{ marginBottom: '8px' }}>
+            {errors.submit}
+          </p>
+        )}
         <button type="submit" disabled={isSubmitting} className="career-submit-button">
           Submit Application
         </button>

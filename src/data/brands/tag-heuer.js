@@ -166,7 +166,6 @@ export const tagHeuerData = {
     ],
     modelsHeading:
       'We service and repair all Tag Heuer models including the following models:-',
-    // Breitling models copied in original site
     modelsList: [
       'Navitimer',
       'Superocean',

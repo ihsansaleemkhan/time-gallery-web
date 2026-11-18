@@ -30,7 +30,7 @@ export default function BrandRepairPage({ brand = rolexData }) {
     };
   }, [pageTitle, brand.brandName]);
 
-  // Layout configuration with exact Rolex defaults
+
   const layoutConfig = {
     bannerWidth: layout.bannerWidth ?? 1100,
     bannerHeight: layout.bannerHeight ?? 242,
@@ -257,7 +257,6 @@ export default function BrandRepairPage({ brand = rolexData }) {
                 </>
               ) : slug === 'dior' ? (
                 <>
-                  {/* TODO: original site says "Chopard" here instead of "Dior" – copy error from Wix, preserving verbatim. Ask my lead. */}
                   The Time Gallery Experts In Chopard Repairs and Services.&nbsp; All
                   <br />
                   Our Work Includes a 1 Year Guarantee So you can rest assured
@@ -402,7 +401,6 @@ export default function BrandRepairPage({ brand = rolexData }) {
             </h3>
 
             {/* Models plain-text lines with literal '• ' */}
-            {/* TODO: these are Breitling models, ask my lead. */}
             <div className="brand-block-a__models-list">
               {blockA.modelsList?.map((model, idx) => (
                 <div key={idx} className="brand-block-a__model-item">
@@ -446,7 +444,6 @@ export default function BrandRepairPage({ brand = rolexData }) {
                 </>
               ) : slug === 'chopard' ? (
                 <>
-                  {/* TODO: original site says "Audemars Piguet" instead of "Chopard" – copy error, preserving verbatim */}
                   Please contact us regarding any repair query you may have regarding
                   <br />
                   your Audemars Piguet watch repair.

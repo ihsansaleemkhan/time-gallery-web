@@ -4,10 +4,9 @@ import CareerForm from '../components/CareerForm';
 import bannerImg from '../assets/images/career/banner.jpg';
 import './Career.css';
 
-// Text constants at the top
+
 const HEADING_1 = 'Career with us';
 const HEADING_2_TITLE = 'A career with us!';
-// TODO: Original copy says "wok" instead of "work" – keeping typo verbatim.
 const PARA_TEXT =
   'The ultimate place to enjoy your wok, where we provide you a friendly work environment and the best infrastructure.';
 const SUBHEADING_LINE_1 = 'Kindly fill the below form.';

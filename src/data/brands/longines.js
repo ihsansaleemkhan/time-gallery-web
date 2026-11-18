@@ -168,7 +168,6 @@ export const longinesData = {
     ],
     modelsHeading:
       'We service and repair all Longines models including the following models:-',
-    // TODO: these are Breitling models, ask my lead.
     modelsList: [
       'Navitimer',
       'Superocean',

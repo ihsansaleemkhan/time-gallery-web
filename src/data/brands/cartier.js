@@ -148,7 +148,6 @@ export const cartierData = {
     ],
     modelsHeading:
       'We service and repair all Cartier models including the following models:-',
-    // TODO: these are Breitling models, ask my lead.
     modelsList: [
       'Navi timer',
       'Super ocean',

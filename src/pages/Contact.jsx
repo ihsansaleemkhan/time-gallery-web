@@ -3,7 +3,8 @@ import './Contact.css';
 
 const INTRO =
   'We pride ourselves on providing a service based on quality and value for money. We repair both mechanical and battery operated watches to the highest of standards.';
-const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT;
+const W3F_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+const W3F_ENDPOINT = 'https://api.web3forms.com/submit';
 
 export default function Contact() {
   const [submission, setSubmission] = useState({ state: 'idle', message: '' });
@@ -19,7 +20,7 @@ export default function Contact() {
     event.preventDefault();
     const form = event.currentTarget;
 
-    if (!FORMSPREE_ENDPOINT) {
+    if (!W3F_KEY) {
       setSubmission({
         state: 'error',
         message: 'The contact form is not connected yet. Please contact us by phone or email.',
@@ -30,16 +31,16 @@ export default function Contact() {
     setSubmission({ state: 'sending', message: '' });
 
     try {
-      const response = await fetch(FORMSPREE_ENDPOINT, {
+      const response = await fetch(W3F_ENDPOINT, {
         method: 'POST',
         body: new FormData(form),
         headers: { Accept: 'application/json' },
       });
 
-      if (!response.ok) {
-        const result = await response.json().catch(() => null);
-        const message = result?.errors?.map((error) => error.message).join(' ');
-        throw new Error(message || 'We could not send your message. Please try again.');
+      const result = await response.json();
+
+      if (!result.success) {
+        throw new Error(result.message || 'We could not send your message. Please try again.');
       }
 
       form.reset();
@@ -85,6 +86,13 @@ export default function Contact() {
           />
 
           <form className="contact-form" onSubmit={handleSubmit}>
+            {/* Web3Forms required hidden fields */}
+            <input type="hidden" name="access_key" value={W3F_KEY} />
+            <input type="hidden" name="subject" value="New contact inquiry from The Time Gallery website" />
+            <input type="hidden" name="from_name" value="The Time Gallery Website" />
+            {/* Honeypot spam protection — must stay hidden */}
+            <input type="checkbox" name="botcheck" style={{ display: 'none' }} readOnly />
+
             <h3 className="contact-form__title">Get in touch</h3>
             <p
               className={`contact-form__status contact-form__status--${submission.state}`}
@@ -94,9 +102,7 @@ export default function Contact() {
               {submission.message}
             </p>
 
-            <input type="hidden" name="_subject" value="New contact inquiry from The Time Gallery website" />
-
-            <div className="contact-form__field contact-form__field--first">
+<div className="contact-form__field contact-form__field--first">
               <label htmlFor="contact-first-name">First Name</label>
               <input id="contact-first-name" name="firstName" placeholder="Enter First Name" />
             </div>

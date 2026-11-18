@@ -11,7 +11,12 @@ const FEATURES_DATA = [
     renderContent: () => (
       <p className="feature-text">
         The time gallery is not only experts in{' '}
-        <a href="/watch-repairs-servicing" className="feature-inline-link">
+        <a
+          href="https://www.watchrepairuk.com/watch-repair-cost-uk/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="feature-inline-link"
+        >
           watch repairs
         </a>
         , but we also specialize in all watch services. We are a family run

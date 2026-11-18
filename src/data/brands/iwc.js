@@ -46,7 +46,6 @@ export const iwcData = {
       minHeight: 236,
       gapBottom: 25,
       photoTop: 37,
-      // TODO: original text says Rolex watches, ask my lead whether to change it to IWC.
       description:
         'The time gallery repair hundreds of\nRolex watches every year and are\nexperts in our field. Please contact us\nbelow for a free quote.',
     },
@@ -155,7 +154,6 @@ export const iwcData = {
     ],
     modelsHeading:
       'We service and repair all IWC models including the following models:-',
-    // TODO: these are Breitling models, ask my lead.
     modelsList: [
       'Navi timer',
       'Super ocean',
