@@ -1,0 +1,361 @@
+.site-footer {
+  background: linear-gradient(
+    to bottom,
+    var(--color-footer-bg-start) 0%,
+    var(--color-footer-bg-end) 100%
+  );
+  color: var(--color-footer-text);
+  padding: 27px 0 11px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 1rem;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Column 1 */
+.col-info {
+  margin-left: 34px;
+  width: 226px;
+}
+
+.copyright-block {
+  width: 226px;
+  margin-left: 14px;
+  margin-bottom: 22px;
+}
+
+.copyright-block .copyright-text {
+  font-size: 12.03px;
+  line-height: 21px;
+  color: #e5e5e5;
+  margin: 0;
+  width: 226px;
+  white-space: nowrap;
+}
+
+.footer-line {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #e5e5e5;
+  margin: 0;
+}
+
+/* Shop location: center at 98, 14px further left (via col-info), 119 wide */
+.location-block {
+  margin-top: 0;
+}
+
+.footer-subheading {
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  height: 20px;
+  line-height: 20px;
+}
+
+.location-heading-main {
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  width: 119px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.location-heading-sub {
+  font-size: 13px;
+  font-weight: 400;
+  color: #d1d5db;
+  white-space: nowrap;
+}
+
+/* Headings */
+.footer-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 24px;
+  height: 24px;
+}
+
+.footer-header-line {
+  width: 219px;
+  max-width: 100%;
+  height: 2px;
+  background-color: #aaaaaa;
+}
+
+/* Contact column */
+.col-contact {
+  margin-left: -63px;
+}
+
+/* Contact heading text moves 3px left (63 - 3 = 60) */
+.col-contact .footer-heading {
+  margin-left: 60px;
+}
+
+/* Underline moves 42px left (63 - 42 = 21) and 4px down (center 69 below footer top) */
+.col-contact .footer-header-line {
+  margin-left: 21px;
+  margin-top: 17.5px;
+  margin-bottom: 12px;
+}
+
+.col-contact .contact-section {
+  margin-left: 42px;
+}
+
+/* Navigation column */
+.col-nav {
+  margin-left: -10px;
+}
+
+.col-nav .footer-heading {
+  margin-left: 22px;
+}
+
+/* Underline moves 4px down (center 69) */
+.col-nav .footer-header-line {
+  margin-left: -7px;
+  margin-top: 17.5px;
+  margin-bottom: 8px;
+}
+
+.col-nav .nav-bullets {
+  margin-left: 10px;
+}
+
+.footer-list {
+  list-style: disc outside;
+  padding-left: 1.2rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Branch items:
+   Branch 1 center 126, address centers 150 & 174.
+   Branch 2 center 197, address centers 221 & 244.
+   Addresses 27px further left (padding-left: 3px instead of 30px). */
+.branch-item {
+  font-size: 13px;
+  color: #d1d5db;
+  margin-left: 4px;
+  margin-top: -4px;
+  margin-bottom: 0;
+}
+
+.branch-item + .branch-item {
+  margin-top: -1px;
+}
+
+.branch-name {
+  font-weight: 400;
+  color: #ffffff;
+  display: block;
+  height: 24px;
+  line-height: 24px;
+}
+
+/* Address (14px further right) */
+.branch-address {
+  display: block;
+  padding-left: 17px;
+  font-weight: 400;
+  color: #d1d5db;
+  font-size: 13px;
+}
+
+.branch-address-line {
+  display: block;
+  height: 24px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+/* Contact list */
+.footer-contact-main-list {
+  list-style: disc outside;
+  padding-left: 1.2rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact-main-item {
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.contact-group-title {
+  font-size: 13px;
+  font-weight: 400;
+  color: #ffffff;
+  display: block;
+  height: 23px;
+  line-height: 23px;
+}
+
+/* Email */
+.email-main-item {
+  margin-top: -1px;
+}
+
+.email-title {
+  margin-top: 0;
+  display: block;
+  height: 24px;
+  line-height: 24px;
+}
+
+.footer-nested-list {
+  list-style: circle outside;
+  padding-left: 1.2rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.footer-nested-list li {
+  line-height: 24px;
+  height: 24px;
+  font-size: 13px;
+}
+
+.email-main-item .footer-nested-list li {
+  line-height: 23px;
+  height: 23px;
+}
+
+/* Navigation bullets */
+.nav-bullets {
+  list-style: disc outside;
+  padding-left: 1.2rem;
+  margin: 3.5px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.nav-bullets li {
+  line-height: 17.5px;
+  height: 17.5px;
+  font-size: 13px;
+}
+
+/* Underline all links in white */
+.footer-link {
+  font-size: 13px;
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: #5ab4ff;
+  text-decoration-color: #5ab4ff;
+}
+
+/* Bottom Attribution: center 306px below footer top */
+.footer-bottom-attribution {
+  border-top: none;
+  padding-top: 21px;
+  text-align: center;
+}
+
+.attribution-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+  text-underline-offset: 3px;
+  margin: 0;
+}
+
+.attribution-link {
+  color: var(--color-footer-attribution);
+  text-decoration: underline;
+  text-decoration-color: var(--color-footer-attribution);
+  font-weight: 700;
+  transition: opacity var(--transition-fast);
+}
+
+.attribution-link:hover {
+  opacity: 0.85;
+}
+
+/* Responsive Footer */
+@media (max-width: 999px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .col-info {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .copyright-block {
+    width: 100%;
+  }
+
+  .copyright-text {
+    width: 100%;
+    white-space: normal;
+  }
+
+  .col-contact,
+  .col-nav {
+    margin-left: 0;
+  }
+
+  .col-contact .footer-heading,
+  .col-contact .contact-section {
+    margin-left: 0;
+  }
+
+  .col-contact .footer-header-line,
+  .col-nav .footer-header-line {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .footer-subheading {
+    margin-left: 0;
+  }
+
+  .branch-item {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .branch-address-line {
+    white-space: normal;
+  }
+
+  .email-main-item {
+    margin-top: 0;
+  }
+}

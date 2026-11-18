@@ -1,122 +1,71 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import FloatingButtons from './components/FloatingButtons';
+import Home from './pages/Home';
+import About from './pages/About';
+import WatchRepairsServicing from './pages/WatchRepairsServicing';
+import BrandRepairPage from './pages/BrandRepairPage';
+import rolexData from './data/brands/rolex';
+import cartierData from './data/brands/cartier';
+import iwcData from './data/brands/iwc';
+import hublotData from './data/brands/hublot';
+import audemarsPiguetData from './data/brands/audemars-piguet';
+import chopardData from './data/brands/chopard';
+import diorData from './data/brands/dior';
+import tagHeuerData from './data/brands/tag-heuer';
+import omegaData from './data/brands/omega';
+import longinesData from './data/brands/longines';
+import radoData from './data/brands/rado';
+import tissotData from './data/brands/tissot';
+import Career from './pages/Career';
+import Contact from './pages/Contact';
+import ComingSoon from './pages/ComingSoon';
+import './styles/global.css';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
 }
 
-export default App
+export default function App() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="app-root">
+        <Header />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/watch-repairs-servicing" element={<WatchRepairsServicing />} />
+          <Route path="/rolex-watch-repair" element={<BrandRepairPage brand={rolexData} />} />
+          <Route path="/cartier-watch-repair" element={<BrandRepairPage brand={cartierData} />} />
+          <Route path="/iwc-schaffhausen-watch-repair" element={<BrandRepairPage brand={iwcData} />} />
+          <Route path="/hublot-watch-repair" element={<BrandRepairPage brand={hublotData} />} />
+          <Route
+            path="/audemars-piguet-watch-repair"
+            element={<BrandRepairPage brand={audemarsPiguetData} />}
+          />
+          <Route path="/chopard-watch-repair" element={<BrandRepairPage brand={chopardData} />} />
+          <Route path="/dior-watch-repair" element={<BrandRepairPage brand={diorData} />} />
+          <Route path="/tag-heuer-repair" element={<BrandRepairPage brand={tagHeuerData} />} />
+          <Route path="/omega-watch-repair" element={<BrandRepairPage brand={omegaData} />} />
+          <Route path="/longines-watch-repair" element={<BrandRepairPage brand={longinesData} />} />
+          <Route path="/rado-watch-repair" element={<BrandRepairPage brand={radoData} />} />
+          <Route path="/tissot-watch-repair" element={<BrandRepairPage brand={tissotData} />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<ComingSoon />} />
+        </Routes>
+
+        <Footer />
+        <FloatingButtons />
+      </div>
+    </BrowserRouter>
+  );
+}
